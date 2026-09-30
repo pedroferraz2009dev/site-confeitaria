@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/cardapio.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="div-logo">
+            <img class="logotipo" src="../img/logo.png" alt="Logotipo da Confeitaria">
+        </div>
+
+        <div class="div-menu">
+            <h1>
+                Confeitaria Sempre Doce
+            </h1>
+
+            </br>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">Início</a>
+                    </li>
+                    <li>
+                        <a href="../pages/sobre.html">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="cardapio.html">Cardápio</a>
+                    </li>
+                    <li>
+                        <a href="../pages/contato.html">contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-logo"></div>
+    </header>
+
+</section>
+
+    <section class="meu-cardapio">
+        <h2>Nosso cardapio</h2>
+        
+        <div class="menu-cardapio-itens">
+            <div class="menu-cardapio-item">
+                <h3>Bolo de Cenoura</h3>
+
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo1.png" alt="Bolo de Cenoura">
+                
+                    <p>
+                        Um clássico irresistivel
+                        com camadas de chocolate.
+                    </p>
+                </div>
+
+                <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+
+            </div>
+            
+            <div class="menu-cardapio-item">
+                <h3>Bolo do Corinthians</h3>
+                
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo2.png" alt="Bolo do Corinthians">
+                
+                    <p>
+                       Fresco e frutado, perfeito
+                        para qualquer ocasião.
+                    </p>
+                </div>
+
+                <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+            </div>
+
+            <div class="menu-cardapio-item">
+                <h3>Bolo de Casamento</h3>
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo3.png" alt="Bolo de Casamento">
+                
+                    <p>
+                        Grande suculento e atrativo
+                        para seu casamento
+                    </p>
+                </div>
+
+                <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meu-cardapio">
+        
+        <div class="menu-cardapio-itens">
+            <div class="menu-cardapio-item">
+                <h3>Bolo de Coco</h3>
+
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo4.jpg" alt="Bolo de Cenoura">
+                
+                    <p>
+                        Um bolo clássico
+                        com camadas de chocolate.
+                    </p>
+                </div>
+
+               <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+
+            </div>
+            
+            <div class="menu-cardapio-item">
+                <h3>Bolo de Laranja</h3>
+                
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo5.jpg" alt="Bolo do Corinthians">
+                
+                    <p>
+                        Perfeito
+                        para aquele cafezinho da tarde.
+                    </p>
+                </div>
+
+                <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+            </div>
+
+            <div class="menu-cardapio-item">
+                <h3>Bolo de Fubá</h3>
+                <div class="div-card">
+                    <img class="img-cardapio" src="../img/bolo6.jpg" alt="Bolo de Casamento">
+                
+                    <p>
+                        Delicioso, macio e com
+                        sabor de infância
+                    </p>
+                </div>
+
+                <div class="reservar">
+                    <button class="button-reserva" onclick="abrir()" href="">Reservar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="fade" class="hide"></div>
+
+    <div id="modal" class="hide">
+        <div class="centralizado">
+            <h2>Realizar reserva</h2>
+            <img src="../img/qrcodepix.png" alt="QR Code">
+        </div>
+
+        <div class="fechar">
+            <a href="">Fechar</a>
+        </div>
+    </div>
+
+</body>
+<script src="../js/cardapio.js"></script>
+</html>
