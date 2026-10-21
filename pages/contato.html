@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | Sempre Doce</title>
+
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/contato.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="div-logo">
+            <img class="logotipo"
+                 src="../img/logo.png"
+                 alt="Logotipo da Confeitaria Sempre Doce">
+        </div>
+
+        <div class="div-menu">
+            <h1>Confeitaria Sempre Doce</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a class="ativo" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="div-logo"></div>
+    </header>
+
+            <div class="formulario-grid">
+
+                <fieldset class="cartao-formulario">
+                    <legend>Dados do cliente</legend>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" name="telefone" type="tel">
+                    </div>
+                </fieldset>
+
+                <fieldset class="cartao-formulario">
+                    <legend>Endereço de entrega</legend>
+
+                    <div class="campo">
+                        <label for="cep">CEP</label>
+                        <input id="cep" name="cep" type="text"
+                               inputmode="numeric"
+                               autocomplete="postal-code" required>
+                        <small>Digite o CEP para preencher o endereço automaticamente.</small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="logradouro">Rua ou avenida</label>
+                        <input id="logradouro" name="logradouro" type="text"
+                               autocomplete="address-line1" required>
+                    </div>
+
+                    <div class="campos-duplos">
+                        <div class="campo">
+                            <label for="numero">Número</label>
+                            <input id="numero" name="numero" type="text"
+                                   required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="bairro">Bairro</label>
+                            <input id="bairro" name="bairro" type="text"
+                                   required>
+                        </div>
+                    </div>
+
+                    <div class="campos-duplos">
+                        <div class="campo">
+                            <label for="cidade">Cidade</label>
+                            <input id="cidade" name="cidade" type="text"
+                                    required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="uf">Estado (UF)</label>
+                            <input id="uf" name="uf" type="text"
+                                    maxlength="2"
+                                   required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="cartao-formulario cartao-pedido">
+                    <legend>Seu pedido</legend>
+
+                    <div class="campo">
+                        <label for="doce">Qual doce?</label>
+                        <select id="doce" name="doce" required>
+                            <option value="">Escolha uma opção</option>
+                            <option>Bolo de Cenoura</option>
+                            <option>Bolo do Corinthians</option>
+                            <option>Bolo de Casamento</option>
+                            <option>Bolo de Coco</option>
+                            <option>Bolo de Laranja</option>
+                            <option>Bolo de Fubá</option>
+                        </select>
+                    </div>
+
+                    <div class="campos-duplos">
+                        <div class="campo">
+                            <label for="quantidade">Quantidade</label>
+                            <input id="quantidade" name="quantidade"
+                                   type="number" min="1" max="999"
+                                   value="1" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="pagamento">Pagamento</label>
+                            <select id="pagamento" name="pagamento" required>
+                                <option value="">Selecione</option>
+                                <option>Pix</option>
+                                <option>Cartão</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+            <div class="acoes-formulario">
+                <button class="botao-principal" type="submit">
+                    Salvar informações
+                </button>
+
+                <button class="botao-secundario" type="reset">
+                    Limpar formulário
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2026 Confeitaria Sempre Doce.
+        Todos os direitos reservados.
+    </footer>
+
+    <script>
+        const cep = document.getElementById("cep");
+
+        cep.addEventListener("input", function () {
+            let valor = this.value.replace(/\D/g, "").slice(0, 8);
+
+            if (valor.length > 5) {
+                valor = valor.replace(/^(\d{5})(\d)/, "$1-$2");
+            }
+
+            this.value = valor;
+        });
+
+        cep.addEventListener("blur", buscarCEP);
+
+        async function buscarCEP() {
+            const numeroCEP = cep.value.replace(/\D/g, "");
+            const mensagem = document.getElementById("mensagem");
+
+            if (!numeroCEP) return;
+
+            if (numeroCEP.length !== 8) {
+                mensagem.textContent = "Digite um CEP válido com 8 números.";
+                return;
+            }
+
+            mensagem.textContent = "Buscando endereço...";
+
+            try {
+                const resposta = await fetch(
+                    `https://viacep.com.br/ws/${numeroCEP}/json/`
+                );
+
+                if (!resposta.ok) {
+                    throw new Error("Falha na consulta");
+                }
+
+                const dados = await resposta.json();
+
+                if (dados.erro) {
+                    mensagem.textContent = "CEP não encontrado. Confira os números.";
+                    return;
+                }
+
+                document.getElementById("logradouro").value = dados.logradouro || "";
+                document.getElementById("bairro").value = dados.bairro || "";
+                document.getElementById("cidade").value = dados.localidade || "";
+                document.getElementById("uf").value = dados.uf || "";
+
+                mensagem.textContent = "Endereço preenchido! Confira os dados.";
+            } catch (erro) {
+                mensagem.textContent =
+                    "Não foi possível consultar o CEP. Preencha o endereço manualmente.";
+            }
+        }
+
+        document.getElementById("formContato").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const mensagem = document.getElementById("mensagem");
+
+            if (!this.reportValidity()) return;
+
+            mensagem.textContent =
+                "Formulário preenchido com sucesso! Para receber o pedido, conecte este formulário ao sistema de atendimento da confeitaria.";
+        });
+
+        document.getElementById("formContato").addEventListener("reset", function () {
+            document.getElementById("mensagem").textContent = "";
+        });
+    </script>
+
+</body>
+</html>

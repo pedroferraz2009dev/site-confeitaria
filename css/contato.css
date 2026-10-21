@@ -1,0 +1,452 @@
+
+/* ===== IDENTIDADE VISUAL DO CONTATO ===== */
+
+.pagina-contato {
+    --rosa: #c94f72;
+    --rosa-escuro: #a63859;
+    --rosa-claro: #fbe8ed;
+    --creme: #fffaf5;
+    --marrom: #553b3b;
+    --texto: #766363;
+
+    font-family: "Poppins", sans-serif;
+    color: var(--marrom);
+
+    background:
+        radial-gradient(ellipse at top left, #fce9ee 0, transparent 38%),
+        var(--creme);
+
+    padding: 0 20px 75px;
+    min-height: 70vh;
+}
+
+
+/* ===== DESTAQUE SUPERIOR ===== */
+
+.contato-banner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 65px 20px 45px;
+    text-align: center;
+}
+
+.contato-banner .subtitulo {
+    display: inline-block;
+    color: var(--rosa);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+}
+
+.contato-banner h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(32px, 5vw, 49px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--marrom);
+    margin: 0 0 16px;
+}
+
+.contato-banner p {
+    max-width: 610px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--texto);
+}
+
+.contato-banner .decoracao {
+    margin-top: 22px;
+    color: var(--rosa);
+    font-size: 24px;
+    letter-spacing: 9px;
+}
+
+
+/* ===== ÁREA PRINCIPAL DO FORMULÁRIO ===== */
+
+.formulario-contato {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 38px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 2px solid #f0d5dd;
+    border-radius: 24px;
+
+    box-shadow: 0 15px 40px rgba(111, 61, 73, 0.12);
+}
+
+.formulario-intro {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 2px solid #f1e2e5;
+}
+
+.formulario-intro h2 {
+    font-family: "Oswald", sans-serif;
+    font-size: 29px;
+    font-weight: 500;
+    margin: 0 0 7px;
+    color: var(--marrom);
+}
+
+.formulario-intro p {
+    color: var(--texto);
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.campo-obrigatorio {
+    display: block;
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--rosa-escuro);
+}
+
+
+/* ===== ORGANIZAÇÃO DOS CARTÕES ===== */
+
+.formulario-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+
+/* Cartões com bordas mais grossas e destacadas */
+
+.cartao-formulario {
+    min-width: 0;
+    margin: 0;
+    padding: 27px;
+
+    border: 2px solid #e5c3cc;
+    border-radius: 17px;
+
+    background: linear-gradient(145deg, #fffdfb, #fff6f8);
+
+    box-shadow: 0 5px 14px rgba(111, 61, 73, 0.07);
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Destaque suave ao passar o mouse */
+
+.cartao-formulario:hover {
+    border-color: #d69aaa;
+    box-shadow: 0 8px 20px rgba(111, 61, 73, 0.11);
+}
+
+/* Títulos dos cartões */
+
+.cartao-formulario legend {
+    padding: 4px 12px;
+
+    color: var(--rosa-escuro);
+    background: var(--creme);
+
+    border-radius: 6px;
+
+    font-family: "Oswald", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/* Cartão do pedido ocupa toda a largura */
+
+.cartao-pedido {
+    grid-column: 1 / -1;
+}
+
+
+/* ===== CAMPOS DO FORMULÁRIO ===== */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 19px;
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    margin-bottom: 8px;
+    color: #624b4b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Campos com bordas de 2 px */
+
+.campo input,
+.campo select,
+.campo textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    border: 2px solid #ead2d9;
+    border-radius: 10px;
+
+    outline: none;
+    background: #fff;
+    color: var(--marrom);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+
+/* Destaque ao passar o mouse */
+
+.campo input:hover,
+.campo select:hover,
+.campo textarea:hover {
+    border-color: #d9a6b4;
+}
+
+
+/* Área de texto */
+
+.campo textarea {
+    resize: vertical;
+    min-height: 105px;
+    line-height: 1.7;
+}
+
+
+/* Texto de exemplo dentro dos campos */
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #b6a6a7;
+}
+
+
+/* Destaque rosa ao selecionar um campo */
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--rosa);
+    background: #fffefe;
+
+    box-shadow: 0 0 0 4px rgba(201, 79, 114, 0.14);
+}
+
+
+/* Texto de orientação */
+
+.campo small {
+    margin-top: 7px;
+    font-size: 10px;
+    line-height: 1.6;
+    color: var(--texto);
+}
+
+
+/* ===== CAMPOS LADO A LADO ===== */
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 19px;
+}
+
+.campos-duplos .campo {
+    margin-bottom: 0;
+}
+
+
+/* ===== BOTÕES ===== */
+
+.acoes-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.acoes-formulario button {
+    min-height: 48px;
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+/* Botão principal */
+
+.botao-principal {
+    color: white;
+    background: var(--rosa);
+    border: 2px solid var(--rosa);
+
+    box-shadow: 0 6px 15px rgba(201, 79, 114, 0.18);
+}
+
+.botao-principal span {
+    margin-left: 8px;
+    font-size: 17px;
+}
+
+.botao-principal:hover {
+    background: var(--rosa-escuro);
+    border-color: var(--rosa-escuro);
+
+    box-shadow: 0 9px 20px rgba(201, 79, 114, 0.24);
+
+    transform: translateY(-2px);
+}
+
+
+/* Botão secundário */
+
+.botao-secundario {
+    color: var(--rosa-escuro);
+    background: #fff;
+    border: 2px solid #e8cbd3;
+}
+
+.botao-secundario:hover {
+    background: var(--rosa-claro);
+    border-color: #d69aaa;
+
+    transform: translateY(-2px);
+}
+
+
+/* ===== MENSAGENS DO FORMULÁRIO ===== */
+
+.mensagem-formulario {
+    margin: 18px 0 0;
+    text-align: center;
+    color: var(--rosa-escuro);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.aviso-formulario {
+    margin: 16px 0 0;
+    text-align: center;
+    color: #917e7e;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* ===== MENU E RODAPÉ ===== */
+
+.div-menu nav a {
+    transition: color 0.2s ease;
+}
+
+.div-menu nav a.ativo {
+    color: var(--rosa);
+    font-weight: 600;
+}
+
+.pagina-contato + footer {
+    text-align: center;
+    padding: 22px 15px;
+    line-height: 1.8;
+}
+
+
+/* ===== TABLETS ===== */
+
+@media (max-width: 760px) {
+
+    .pagina-contato {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .contato-banner {
+        padding-top: 45px;
+        padding-bottom: 30px;
+    }
+
+    .formulario-contato {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    .formulario-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cartao-pedido {
+        grid-column: auto;
+    }
+}
+
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 480px) {
+
+    .contato-banner h2 {
+        font-size: 32px;
+    }
+
+    .contato-banner p {
+        font-size: 13px;
+    }
+
+    .formulario-contato {
+        padding: 20px 13px;
+    }
+
+    .formulario-intro h2 {
+        font-size: 25px;
+    }
+
+    .cartao-formulario {
+        padding: 20px 14px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+
+    .acoes-formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acoes-formulario button {
+        width: 100%;
+    }
+}
